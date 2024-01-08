@@ -60,5 +60,4 @@ while (*head != NULL)
         free_listint(aux);
 
         return (1);
-
 }
