@@ -4,6 +4,6 @@ def print_reversed_list_integer(my_list=[]):
 
     if my_list:
 
-        for elm in my_list[::-1]:
+        for elme in my_list[::-1]:
 
-            print("{:d}".format(elm))
+            print("{:d}".format(elme))
