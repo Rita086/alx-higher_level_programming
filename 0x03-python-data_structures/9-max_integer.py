@@ -2,7 +2,7 @@
 
 def max_integer(my_list=[]):
 
-    new_list = []
+    current_list = []
 
     if my_list:
 
