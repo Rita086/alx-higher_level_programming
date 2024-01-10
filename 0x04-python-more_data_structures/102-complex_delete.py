@@ -5,4 +5,3 @@ def complex_delete(my_dict, value):
         if value == h:
             my_dict.pop(g)
             return my_dict
-
