@@ -10,7 +10,7 @@ class Square:
         """Initialize a new square.
 
         Args:
-            size (int): The size of the new square.
+            size (int): The size of the current square.
             position (int, int): The position of the new square.
         """
         self.size = size
@@ -18,7 +18,7 @@ class Square:
 
     @property
     def size(self):
-        """Get/set the current size of the square."""
+        """Find/set the new size of the square."""
         return (self.__size)
 
     @size.setter
@@ -31,7 +31,7 @@ class Square:
 
     @property
     def position(self):
-        """Get/set the current position of the square."""
+        """Find/set the new position of the square."""
         return (self.__position)
 
     @position.setter
@@ -48,24 +48,24 @@ class Square:
         return (self.__size * self.__size)
 
     def my_print(self):
-        """Print the square with the # character."""
+        """Output the square with the # character."""
         if self.__size == 0:
             print("")
             return
 
-        [print("") for i in range(0, self.__position[1])]
-        for i in range(0, self.__size):
-            [print(" ", end="") for j in range(0, self.__position[0])]
-            [print("#", end="") for k in range(0, self.__size)]
+        [print("") for m in range(0, self.__position[1])]
+        for m in range(0, self.__size):
+            [print(" ", end="") for k in range(0, self.__position[0])]
+            [print("#", end="") for j in range(0, self.__size)]
             print("")
 
     def __str__(self):
         """Define the print() representation of a Square."""
         if self.__size != 0:
-            [print("") for i in range(0, self.__position[1])]
-        for i in range(0, self.__size):
-            [print(" ", end="") for j in range(0, self.__position[0])]
-            [print("#", end="") for k in range(0, self.__size)]
-            if i != self.__size - 1:
+            [print("") for m in range(0, self.__position[1])]
+        for m in range(0, self.__size):
+            [print(" ", end="") for k in range(0, self.__position[0])]
+            [print("#", end="") for j in range(0, self.__size)]
+            if m != self.__size - 1:
                 print("")
         return ("")
