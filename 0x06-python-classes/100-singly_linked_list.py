@@ -6,28 +6,28 @@ class Node:
     """Represent a node in a singly-linked list."""
 
     def __init__(self, data, next_node=None):
-        """Initialize a new Node.
+        """Starts a new Node.
         Args:
-            data (int): The data of the new Node.
-            next_node (Node): The next node of the new Node.
+            data (int): The data of the current Node.
+            next_node (Node): The next node of the current Node.
         """
         self.data = data
         self.next_node = next_node
 
     @property
     def data(self):
-        """Get/set the data of the Node."""
+        """Find/set the data of the Node."""
         return (self.__data)
 
     @data.setter
     def data(self, value):
         if not isinstance(value, int):
-            raise TypeError("data must be an integer")
+            raise TypeError("data must be an int")
         self.__data = value
 
     @property
     def next_node(self):
-        """Get/set the next_node of the Node."""
+        """Find/set the next_node of the Node."""
         return (self.__next_node)
 
     @next_node.setter
@@ -41,7 +41,7 @@ class SinglyLinkedList:
     """Represent a singly-linked list."""
 
     def __init__(self):
-        """Initalize a new SinglyLinkedList."""
+        """Starts a new SinglyLinkedList."""
         self.__head = None
 
     def sorted_insert(self, value):
