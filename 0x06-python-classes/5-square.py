@@ -6,7 +6,7 @@ class Square:
     """Represent a square."""
 
     def __init__(self, size):
-        """Initialize a new square.
+        """Starts a current square.
         Args:
             size (int): The size of the new square.
         """
@@ -14,7 +14,7 @@ class Square:
 
     @property
     def size(self):
-        """Get/set the current size of the square."""
+        """Find the new size of the square."""
         return (self.__size)
 
     @size.setter
@@ -30,7 +30,7 @@ class Square:
         return (self.__size * self.__size)
 
     def my_print(self):
-        """Print the square with the # character."""
+        """Output the square with the # character."""
         for i in range(0, self.__size):
             [print("#", end="") for j in range(self.__size)]
             print("")
