@@ -1,7 +1,7 @@
 #include <Python.h>
 #include <stdio.h>
 /**
- * print_python_float - gives data of the PyFloatObject
+ * print_python_float - gives data information of the PyFloatObject
  * @p: the PyObject
  */
 void print_python_float(PyObject *p)
@@ -22,12 +22,12 @@ void print_python_float(PyObject *p)
 	printf("  value: %s\n", string);
 }
 /**
- * print_python_bytes - gives data of the PyBytesObject
+ * print_python_bytes - gives data information of the PyBytesObject
  * @p: the PyObject
  */
 void print_python_bytes(PyObject *p)
 {
-	Py_ssize_t size = 0, i = 0;
+	Py_ssize_t size = 0, b = 0;
 	char *string = NULL;
 
 	fflush(stdout);
@@ -42,10 +42,10 @@ void print_python_bytes(PyObject *p)
 	string = (assert(PyBytes_Check(p)), (((PyBytesObject *)(p))->ob_sval));
 	printf("  trying string: %s\n", string);
 	printf("  first %zd bytes:", size < 10 ? size + 1 : 10);
-	while (i < size + 1 && i < 10)
+	while (b < size + 1 && b < 10)
 	{
-		printf(" %02hhx", string[i]);
-		i++;
+		printf(" %02hhx", string[b]);
+		b++;
 	}
 	printf("\n");
 }
@@ -57,7 +57,7 @@ void print_python_list(PyObject *p)
 {
 	Py_ssize_t size = 0;
 	PyObject *item;
-	int i = 0;
+	int b = 0;
 
 	fflush(stdout);
 	printf("[*] Python list info\n");
@@ -66,15 +66,15 @@ void print_python_list(PyObject *p)
 		size = PyList_GET_SIZE(p);
 		printf("[*] Size of the Python List = %zd\n", size);
 		printf("[*] Allocated = %lu\n", ((PyListObject *)p)->allocated);
-		while (i < size)
+		while (b < size)
 		{
-			item = PyList_GET_ITEM(p, i);
-			printf("Element %d: %s\n", i, item->ob_type->tp_name);
+			item = PyList_GET_ITEM(p, b);
+			printf("Element %d: %s\n", b, item->ob_type->tp_name);
 			if (PyBytes_Check(item))
 				print_python_bytes(item);
 			else if (PyFloat_Check(item))
 				print_python_float(item);
-			i++;
+			b++;
 		}
 	}
 	else
