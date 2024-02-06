@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-"""Defines a class Student."""
+"""States a class Student."""
 
 
 class Student:
-    """Represent a student."""
+    """Depict a student."""
 
     def __init__(self, first_name, last_name, age):
         """Initialize a new Student.
 
-        Args:
+        Arguments:
             first_name (str): The first name of the student.
             last_name (str): The last name of the student.
             age (int): The age of the student.
@@ -18,13 +18,13 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        """Get a dictionary representation of the Student.
+        """Get a dictionary depiction of the Student.
 
-        If attrs is a list of strings, represents only those attributes
+        If attrs is a list of strings, depicts only those attributes
         included in the list.
 
-        Args:
-            attrs (list): (Optional) The attributes to represent.
+        Arguments:
+            attrs (list): (Optional) The attributes to depict.
         """
         if (type(attrs) == list and
                 all(type(ele) == str for ele in attrs)):
