@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # test_square.py
 # Brennan D Baraban <375@holbertonschool.com>
-"""Defines unittests for models/square.py.
+"""Represents unittests for models/square.py.
 
 Unittest classes:
     TestSquare_instantiation - line 24
@@ -638,7 +638,7 @@ class TestSquare_update_kwargs(unittest.TestCase):
 
 
 class TestSquare_to_dictionary(unittest.TestCase):
-    """Unittests for testing to_dictionary method of the Square class."""
+    """Unittest for testing to_dictionary method of the Square class."""
 
     def test_to_dictionary_output(self):
         s = Square(10, 2, 1, 1)

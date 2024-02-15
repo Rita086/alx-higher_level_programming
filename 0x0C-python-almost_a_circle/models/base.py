@@ -18,9 +18,9 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Initialize a new Base.
+        """Starts a new Base.
 
-        Args:
+        Arguments:
             id (int): The identity of the new Base.
         """
         if id is not None:
@@ -31,7 +31,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """Return the JSON serialization of a list of dicts.
+        """Takes back the JSON serialization of a list of dicts.
 
         Args:
             list_dictionaries (list): A list of dictionaries.
@@ -71,7 +71,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """Return a class instantied from a dictionary of attributes.
+        """Takes back a class instantied from a dictionary of attributes.
 
         Args:
             **dictionary (dict): Key/value pairs of attributes to initialize.
@@ -124,7 +124,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        """Return a list of classes instantiated from a CSV file.
+        """Takes back a list of classes instantiated from a CSV file.
 
         Reads from `<cls.__name__>.csv`.
 
@@ -140,7 +140,7 @@ class Base:
                 else:
                     fieldnames = ["id", "size", "x", "y"]
                 list_dicts = csv.DictReader(csvfile, fieldnames=fieldnames)
-                list_dicts = [dict([k, int(v)] for k, v in d.items())
+                list_dicts = [dict([m, int(v)] for m, v in d.items())
                               for d in list_dicts]
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
@@ -165,7 +165,7 @@ class Base:
             turt.up()
             turt.goto(rect.x, rect.y)
             turt.down()
-            for i in range(2):
+            for j in range(2):
                 turt.forward(rect.width)
                 turt.left(90)
                 turt.forward(rect.height)
@@ -178,7 +178,7 @@ class Base:
             turt.up()
             turt.goto(sq.x, sq.y)
             turt.down()
-            for i in range(2):
+            for j in range(2):
                 turt.forward(sq.width)
                 turt.left(90)
                 turt.forward(sq.height)

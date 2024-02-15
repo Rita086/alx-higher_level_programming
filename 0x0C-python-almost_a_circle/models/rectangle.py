@@ -7,9 +7,9 @@ class Rectangle(Base):
     """Represent a rectangle."""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Initialize a new Rectangle.
+        """Starts a new Rectangle.
 
-        Args:
+        Arguments:
             width (int): The width of the new Rectangle.
             height (int): The height of the new Rectangle.
             x (int): The x coordinate of the new Rectangle.
@@ -42,7 +42,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """Set/get the height of the Rectangle."""
+        """Set/find the height of the Rectangle."""
         return self.__height
 
     @height.setter
@@ -55,7 +55,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """Set/get the x coordinate of the Rectangle."""
+        """Set/find the x coordinate of the Rectangle."""
         return self.__x
 
     @x.setter
@@ -98,7 +98,7 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """Update the Rectangle.
 
-        Args:
+        Arguments:
             *args (ints): New attribute values.
                 - 1st argument represents id attribute
                 - 2nd argument represents width attribute
@@ -108,37 +108,37 @@ class Rectangle(Base):
             **kwargs (dict): New key/value pairs of attributes.
         """
         if args and len(args) != 0:
-            a = 0
+            b = 0
             for arg in args:
-                if a == 0:
+                if b == 0:
                     if arg is None:
                         self.__init__(self.width, self.height, self.x, self.y)
                     else:
                         self.id = arg
-                elif a == 1:
+                elif b == 1:
                     self.width = arg
-                elif a == 2:
+                elif b == 2:
                     self.height = arg
-                elif a == 3:
+                elif b == 3:
                     self.x = arg
-                elif a == 4:
+                elif b == 4:
                     self.y = arg
-                a += 1
+                b += 1
 
         elif kwargs and len(kwargs) != 0:
-            for k, v in kwargs.items():
-                if k == "id":
+            for m, v in kwargs.items():
+                if m == "id":
                     if v is None:
                         self.__init__(self.width, self.height, self.x, self.y)
                     else:
                         self.id = v
-                elif k == "width":
+                elif m == "width":
                     self.width = v
-                elif k == "height":
+                elif m == "height":
                     self.height = v
-                elif k == "x":
+                elif m == "x":
                     self.x = v
-                elif k == "y":
+                elif m == "y":
                     self.y = v
 
     def to_dictionary(self):
@@ -152,7 +152,7 @@ class Rectangle(Base):
         }
 
     def __str__(self):
-        """Return the print() and str() representation of the Rectangle."""
+        """Takes back the print() and str() representation of the Rectangle."""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                                                        self.x, self.y,
                                                        self.width, self.height)

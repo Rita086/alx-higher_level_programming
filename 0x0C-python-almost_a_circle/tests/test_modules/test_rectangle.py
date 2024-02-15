@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # test_rectangle.py
 # Brennan D Baraban <375@holbertonschool.com>
-"""Defines unittests for models/rectangle.py.
+"""Represents unittests for models/rectangle.py.
 
 Unittest classes:
     TestRectangle_instantiation - line 25
@@ -332,7 +332,7 @@ class TestRectangle_x(unittest.TestCase):
 
 
 class TestRectangle_y(unittest.TestCase):
-    """Unittests for testing initialization of Rectangle y attribute."""
+    """Unittest for testing initialization of Rectangle y attribute."""
 
     def test_None_y(self):
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
@@ -428,7 +428,7 @@ class TestRectangle_order_of_initialization(unittest.TestCase):
 
 
 class TestRectangle_area(unittest.TestCase):
-    """Unittests for testing the area method of the Rectangle class."""
+    """Unittest for testing the area method of the Rectangle class."""
 
     def test_area_small(self):
         r = Rectangle(10, 2, 0, 0, 0)
@@ -451,7 +451,7 @@ class TestRectangle_area(unittest.TestCase):
 
 
 class TestRectangle_stdout(unittest.TestCase):
-    """Unittests for testing __str__ and display methods of Rectangle class."""
+    """Unittest for testing __str__ and display methods of Rectangle class."""
 
     @staticmethod
     def capture_stdout(rect, method):
@@ -674,7 +674,7 @@ class TestRectangle_update_args(unittest.TestCase):
 
 
 class TestRectangle_update_kwargs(unittest.TestCase):
-    """Unittests for testing update kwargs method of the Rectangle class."""
+    """Unittest for testing update kwargs method of the Rectangle class."""
 
     def test_update_kwargs_one(self):
         r = Rectangle(10, 10, 10, 10, 10)
@@ -751,7 +751,7 @@ class TestRectangle_update_kwargs(unittest.TestCase):
 
     def test_update_kwargs_inavlid_x_type(self):
         r = Rectangle(10, 10, 10, 10, 10)
-        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+        with self.assertRaisesRegex(TypeError, "x must be an int"):
             r.update(x="invalid")
 
     def test_update_kwargs_x_negative(self):
@@ -761,7 +761,7 @@ class TestRectangle_update_kwargs(unittest.TestCase):
 
     def test_update_kwargs_invalid_y_type(self):
         r = Rectangle(10, 10, 10, 10, 10)
-        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+        with self.assertRaisesRegex(TypeError, "y must be an int"):
             r.update(y="invalid")
 
     def test_update_kwargs_y_negative(self):
@@ -786,7 +786,7 @@ class TestRectangle_update_kwargs(unittest.TestCase):
 
 
 class TestRectangle_to_dictionary(unittest.TestCase):
-    """Unittests for testing to_dictionary method of the Rectangle class."""
+    """Unittest for testing to_dictionary method of the Rectangle class."""
 
     def test_to_dictionary_output(self):
         r = Rectangle(10, 2, 1, 9, 5)

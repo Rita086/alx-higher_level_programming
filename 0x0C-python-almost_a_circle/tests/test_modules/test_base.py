@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines unittests for base.py.
+"""'Represents unittests for base.py.
 
 Unittest classes:
     TestBase_instantiation - line 21
@@ -19,7 +19,7 @@ from models.square import Square
 
 
 class TestBase_instantiation(unittest.TestCase):
-    """Unittests for testing instantiation of the Base class."""
+    """Unittest for testing instantiation of the Base class."""
 
     def test_no_arg(self):
         b1 = Base()
@@ -152,11 +152,11 @@ class TestBase_to_json_string(unittest.TestCase):
 
 
 class TestBase_save_to_file(unittest.TestCase):
-    """Unittests for testing save_to_file method of Base class."""
+    """Unittest for testing save_to_file method of Base class."""
 
     @classmethod
     def tearDown(self):
-        """Delete any created files."""
+        """Remove any created files."""
         try:
             os.remove("Rectangle.json")
         except IOError:
@@ -230,7 +230,7 @@ class TestBase_save_to_file(unittest.TestCase):
 
 
 class TestBase_from_json_string(unittest.TestCase):
-    """Unittests for testing from_json_string method of Base class."""
+    """Unittest for testing from_json_string method of Base class."""
 
     def test_from_json_string_type(self):
         list_input = [{"id": 89, "width": 10, "height": 4}]
@@ -402,11 +402,11 @@ class TestBase_load_from_file(unittest.TestCase):
 
 
 class TestBase_save_to_file_csv(unittest.TestCase):
-    """Unittests for testing save_to_file_csv method of Base class."""
+    """Unittest for testing save_to_file_csv method of Base class."""
 
     @classmethod
     def tearDown(self):
-        """Delete any created files."""
+        """Remove any created files."""
         try:
             os.remove("Rectangle.csv")
         except IOError:
