@@ -18,9 +18,15 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+<<<<<<< HEAD
         """Initialize a new Base.
 
         Args:
+=======
+        """Starts a new Base.
+
+        Arguments:
+>>>>>>> 71f43bfc6369b08317e718e1ba22adee01dfea5f
             id (int): The identity of the new Base.
         """
         if id is not None:
@@ -31,7 +37,11 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+<<<<<<< HEAD
         """Return the JSON serialization of a list of dicts.
+=======
+        """Takes back the JSON serialization of a list of dicts.
+>>>>>>> 71f43bfc6369b08317e718e1ba22adee01dfea5f
 
         Args:
             list_dictionaries (list): A list of dictionaries.
@@ -71,7 +81,11 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+<<<<<<< HEAD
         """Return a class instantied from a dictionary of attributes.
+=======
+        """Takes back a class instantied from a dictionary of attributes.
+>>>>>>> 71f43bfc6369b08317e718e1ba22adee01dfea5f
 
         Args:
             **dictionary (dict): Key/value pairs of attributes to initialize.
@@ -124,7 +138,11 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
+<<<<<<< HEAD
         """Return a list of classes instantiated from a CSV file.
+=======
+        """Takes back a list of classes instantiated from a CSV file.
+>>>>>>> 71f43bfc6369b08317e718e1ba22adee01dfea5f
 
         Reads from `<cls.__name__>.csv`.
 
@@ -140,7 +158,11 @@ class Base:
                 else:
                     fieldnames = ["id", "size", "x", "y"]
                 list_dicts = csv.DictReader(csvfile, fieldnames=fieldnames)
+<<<<<<< HEAD
                 list_dicts = [dict([k, int(v)] for k, v in d.items())
+=======
+                list_dicts = [dict([m, int(v)] for m, v in d.items())
+>>>>>>> 71f43bfc6369b08317e718e1ba22adee01dfea5f
                               for d in list_dicts]
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
@@ -165,7 +187,11 @@ class Base:
             turt.up()
             turt.goto(rect.x, rect.y)
             turt.down()
+<<<<<<< HEAD
             for i in range(2):
+=======
+            for j in range(2):
+>>>>>>> 71f43bfc6369b08317e718e1ba22adee01dfea5f
                 turt.forward(rect.width)
                 turt.left(90)
                 turt.forward(rect.height)
@@ -178,7 +204,11 @@ class Base:
             turt.up()
             turt.goto(sq.x, sq.y)
             turt.down()
+<<<<<<< HEAD
             for i in range(2):
+=======
+            for j in range(2):
+>>>>>>> 71f43bfc6369b08317e718e1ba22adee01dfea5f
                 turt.forward(sq.width)
                 turt.left(90)
                 turt.forward(sq.height)
